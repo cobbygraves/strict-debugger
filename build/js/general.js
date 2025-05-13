@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 class General {
     constructor() {
         this.componentsData = {
@@ -163,4 +161,4 @@ class General {
         return newWord;
     }
 }
-exports.default = General;
+export default General;

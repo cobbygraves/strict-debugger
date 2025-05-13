@@ -13,16 +13,12 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 var _AdvanceSettings_instances, _AdvanceSettings_markup, _AdvanceSettings_analyticsUsage;
-Object.defineProperty(exports, "__esModule", { value: true });
 // @ts-ignore
-const chart_js_1 = require("chart.js");
+import { Chart } from 'chart.js';
 // import General from './general.js'
-const basicSettings_1 = __importDefault(require("./basicSettings"));
-class AdvanceSettings extends basicSettings_1.default {
+import Light from './basicSettings';
+class AdvanceSettings extends Light {
     constructor() {
         super();
         _AdvanceSettings_instances.add(this);
@@ -214,7 +210,7 @@ _AdvanceSettings_instances = new WeakSet(), _AdvanceSettings_markup = function _
         `;
 }, _AdvanceSettings_analyticsUsage = function _AdvanceSettings_analyticsUsage(data) {
     const ctx = this.selector('#myChart');
-    new chart_js_1.Chart(ctx, {
+    new Chart(ctx, {
         type: 'line',
         data: {
             labels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'],
@@ -235,4 +231,4 @@ _AdvanceSettings_instances = new WeakSet(), _AdvanceSettings_markup = function _
         }
     });
 };
-exports.default = AdvanceSettings;
+export default AdvanceSettings;
