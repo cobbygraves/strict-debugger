@@ -12,8 +12,8 @@ const nav: HTMLElement = document.querySelector('nav')!
 const loader: HTMLElement = document.querySelector('.loader-container')!
 
 // imports
-import Light from './js/basicSettings'
-import AdvanceSettings from './js/advanceSettings'
+import Light from './basicSettings'
+import AdvanceSettings from './advanceSettings'
 
 // object creation
 const lightController = new Light()
