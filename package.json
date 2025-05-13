@@ -19,7 +19,6 @@
   "homepage": "https://github.com/cobbygraves/statically-strict-debugger#readme",
   "description": "",
   "devDependencies": {
-    "@types/chart.js": "^2.9.41",
     "typescript": "^5.8.3"
   }
 }

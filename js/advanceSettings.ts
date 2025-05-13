@@ -1,4 +1,5 @@
 'use strict'
+// @ts-ignore
 import { Chart } from 'chart.js'
 
 export interface ComponentInterface {
@@ -99,11 +100,11 @@ class AdvanceSettings extends Light {
         ]
       },
       options: {
-        //   scales: {
-        //     y: {
-        //       beginAtZero: true,
-        //     }
-        //   }
+          scales: {
+            y: {
+              beginAtZero: true,
+            }
+          }
       }
     })
   }
