@@ -4,16 +4,16 @@ const homepageButton: HTMLElement = document.querySelector('.entry_point')!
 const homepage: HTMLElement = document.querySelector('main')!
 const mainRoomsContainer: HTMLElement = document.querySelector(
   '.application_container'
-)!
+) as HTMLElement
 const advanceFeaturesContainer: HTMLElement = document.querySelector(
   '.advanced_features_container'
-)!
+) as HTMLElement
 const nav: HTMLElement = document.querySelector('nav')!
 const loader: HTMLElement = document.querySelector('.loader-container')!
 
 // imports
-import Light from './js/basicSettings.js'
-import AdvanceSettings from './js/advanceSettings.js'
+import Light from './js/basicSettings'
+import AdvanceSettings from './js/advanceSettings'
 
 // object creation
 const lightController = new Light()
@@ -40,9 +40,8 @@ mainRoomsContainer.addEventListener('click', (e) => {
 
   // when click occurs on light switch
   if (selectedElement?.closest('.light-switch')) {
-    const lightSwitch = selectedElement?.closest(
-      '.basic_settings_buttons'
-    )?.firstElementChild
+    const lightSwitch = selectedElement?.closest('.basic_settings_buttons')
+      ?.firstElementChild as HTMLElement
     lightController.toggleLightSwitch(lightSwitch)
     return
   }
@@ -51,7 +50,7 @@ mainRoomsContainer.addEventListener('click', (e) => {
   if (selectedElement.closest('.advance-settings_modal')) {
     const advancedSettingsBtn = selectedElement.closest(
       '.advance-settings_modal'
-    )
+    ) as HTMLElement
     advancedSettings.modalPopUp(advancedSettingsBtn)
   }
 })
@@ -65,7 +64,7 @@ mainRoomsContainer.addEventListener('change', (e) => {
 
 // advance settings modal
 advanceFeaturesContainer.addEventListener('click', (e) => {
-  const selectedElement = e.target as Element
+  const selectedElement = e.target as HTMLInputElement
 
   if (selectedElement?.closest('.close-btn')) {
     advancedSettings.closeModalPopUp()

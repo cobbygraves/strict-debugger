@@ -2,10 +2,10 @@
   "name": "statically-strict-debugger",
   "version": "1.0.0",
   "main": "main.js",
- "scripts": {
-  "build": "tsc",
-  "start": "node build/main.js"
-},
+  "scripts": {
+    "build": "tsc",
+    "start": "node build/main.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cobbygraves/statically-strict-debugger.git"
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/cobbygraves/statically-strict-debugger#readme",
   "description": "",
   "devDependencies": {
+    "@types/chart.js": "^2.9.41",
     "typescript": "^5.8.3"
   }
 }

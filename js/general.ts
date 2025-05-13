@@ -101,7 +101,7 @@ class General {
   }
 
   getSelectedComponentName(
-    element: HTMLElement,
+    element: HTMLElement | null,
     ancestorIdentifier = '.rooms',
     elementSelector = 'p'
   ) {
@@ -164,11 +164,11 @@ class General {
   }
 
   closestSelector(
-    selectedElement: HTMLElement,
+    selectedElement: HTMLElement | null,
     ancestorIdentifier: string,
     childSelector: string
   ) {
-    const closestAncestor = selectedElement.closest(ancestorIdentifier)
+    const closestAncestor = selectedElement?.closest(ancestorIdentifier)
     return closestAncestor ? closestAncestor.querySelector(childSelector) : null
   }
 
