@@ -9,8 +9,8 @@ const advanceFeaturesContainer = document.querySelector(
 const nav = document.querySelector('nav')
 const loader = document.querySelector('.loader-container')
 // imports
-import Light from './basicSettings'
-import AdvanceSettings from './advanceSettings'
+import Light from '../js/basicSettings.js'
+import AdvanceSettings from '../js/advanceSettings.js'
 // object creation
 const lightController = new Light()
 const advancedSettings = new AdvanceSettings()
