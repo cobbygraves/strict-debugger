@@ -1,4 +1,4 @@
-'use script'
+'use strict'
 // elements declarations
 const homepageButton: HTMLElement = document.querySelector('.entry_point')!
 const homepage: HTMLElement = document.querySelector('main')!

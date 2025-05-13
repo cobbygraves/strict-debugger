@@ -1,6 +1,5 @@
 'use strict'
 
-import { ComponentInterface } from './advanceSettings.js'
 import General from './general.js'
 
 class Light extends General {
