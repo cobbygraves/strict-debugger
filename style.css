@@ -163,12 +163,14 @@ h1 span:first-child {
     letter-spacing: 4px;
     font-weight: 500;
 }
+
+/* show room background */
 .rooms > img {
     object-fit: cover;
     position: absolute;
     z-index: -1;
     /* opacity: .1; */
-    filter: brightness(0.0);
+    filter: brightness(0.0); 
 
 }
 .main_hall, .hall {

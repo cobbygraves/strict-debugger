@@ -91,7 +91,7 @@ class Light extends General {
   }
 
   handleLightIntensitySlider(element: HTMLElement, intensity: string | number) {
-    const { componentData } = this.lightComponentSelectors(element)
+    const { componentData  } = this.lightComponentSelectors(element)
 
     if (typeof intensity !== 'number' || isNaN(Number(intensity))) return
 

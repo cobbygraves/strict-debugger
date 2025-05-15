@@ -9,7 +9,7 @@ export interface ComponentInterface {
   autoOff: string
 }
 
-// import General from './general.js'
+import General from './general.js'
 import Light from './basicSettings'
 
 class AdvanceSettings extends Light {
@@ -100,11 +100,11 @@ class AdvanceSettings extends Light {
         ]
       },
       options: {
-          scales: {
-            y: {
-              beginAtZero: true,
-            }
+        scales: {
+          y: {
+            beginAtZero: true
           }
+        }
       }
     })
   }
@@ -167,7 +167,7 @@ class AdvanceSettings extends Light {
     const { value } = element
 
     // when value is falsy
-    if (!!value) return
+    if (!value) return
 
     const component = this.getComponentData(
       element,
@@ -199,7 +199,7 @@ class AdvanceSettings extends Light {
     const { value } = element
 
     // when value is falsy
-    if (!!value) return
+    if (!value) return
 
     const component = this.getComponentData(
       element,
@@ -222,7 +222,7 @@ class AdvanceSettings extends Light {
     this.automateLight(component['autoOff'], component.autoOff)
   }
 
-  getSelectedComponent(componentName: string) {
+  getSelectedComponent(componentName: string): ComponentInterface {
     if (!componentName) return this.componentsData[0]
     const component = this.componentsData[componentName.toLowerCase()]
     return component
