@@ -33,7 +33,7 @@ class Light extends General {
     }
     lightComponentSelectors(lightButtonElement) {
         const room = this.getSelectedComponentName(lightButtonElement);
-        const componentData = this.getComponent(room[0]);
+        const componentData = this.getComponent(room);
         const childElement = lightButtonElement === null || lightButtonElement === void 0 ? void 0 : lightButtonElement.firstElementChild;
         const background = this.closestSelector(lightButtonElement, '.rooms', 'img');
         return { room, componentData, childElement, background };
@@ -59,7 +59,7 @@ class Light extends General {
     }
     handleLightIntensitySlider(element, intensity) {
         const { componentData } = this.lightComponentSelectors(element);
-        if (typeof intensity !== 'number' || isNaN(Number(intensity)))
+        if (typeof intensity !== 'number' || isNaN(intensity))
             return;
         componentData.lightIntensity = intensity;
         const lightSwitch = this.closestSelector(element, '.rooms', '.light-switch');
@@ -68,7 +68,7 @@ class Light extends General {
             this.sliderLight(componentData.isLightOn, lightSwitch);
             return;
         }
-        componentData.isLightOn = false;
+        componentData.isLightOn = true;
         this.sliderLight(componentData.isLightOn, lightSwitch);
     }
     sliderLight(isLightOn, lightButtonElement) {

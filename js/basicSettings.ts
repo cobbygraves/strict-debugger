@@ -51,7 +51,7 @@ class Light extends General {
 
   lightComponentSelectors(lightButtonElement: HTMLElement | null) {
     const room = this.getSelectedComponentName(lightButtonElement)!
-    const componentData = this.getComponent(room[0])
+    const componentData = this.getComponent(room)
     const childElement = lightButtonElement?.firstElementChild as HTMLElement
     const background = this.closestSelector(
       lightButtonElement,
@@ -90,10 +90,10 @@ class Light extends General {
     }
   }
 
-  handleLightIntensitySlider(element: HTMLElement, intensity: string | number) {
-    const { componentData  } = this.lightComponentSelectors(element)
+  handleLightIntensitySlider(element: HTMLElement, intensity: number) {
+    const { componentData } = this.lightComponentSelectors(element)
 
-    if (typeof intensity !== 'number' || isNaN(Number(intensity))) return
+    if (typeof intensity !== 'number' || isNaN(intensity)) return
 
     componentData.lightIntensity = intensity
 
@@ -109,7 +109,7 @@ class Light extends General {
       return
     }
 
-    componentData.isLightOn = false
+    componentData.isLightOn = true
     this.sliderLight(componentData.isLightOn, lightSwitch)
   }
 
